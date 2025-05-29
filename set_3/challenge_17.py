@@ -145,7 +145,7 @@ def padding_oracle_decryptor(iv, encoded, padding_oracle):
                     data += bytearray(encoded[block_idx*AES_BLOCKSIZE:(block_idx+1)*AES_BLOCKSIZE])
 
                     if padding_oracle.padding_ok(data, iv):
-                        print(f"Padding for byte: {idx} test_val: {test_val} deciphred: {test_val^(AES_BLOCKSIZE - idx)}")
+                        print(f"Padding for byte: {idx} test_val: {test_val} deciphered: {test_val^(AES_BLOCKSIZE - idx)}")
                         decoded_values.append( test_val^(AES_BLOCKSIZE - idx)^ciphered_byte )
 
                 for val in decoded_values:
